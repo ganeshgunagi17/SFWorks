@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction,lightning:isUrlAddressable" access="global" >
+    <lightning:navigation aura:id="navigateId"/>
+    <lightning:card  iconName="standard:account" title="Job Portal">
+    <lightning:layout>
+    	<div class="slds-box slds-align_absolute-center">
+        	<div class="slds-grid">
+                <div class="slds-col">
+                <lightning:button label="Admin"  type="button" variant="brand" onclick="{!c.adminMethod}"/>
+                    </div>
+                            <div class="slds-col slds-p-left_large">
+                <lightning:button label="User" type="button" variant="brand" onclick="{!c.userMethod}"/>
+                    </div>
+            </div>
+        </div>
+        
+    </lightning:layout>
+    </lightning:card>
+</aura:component>

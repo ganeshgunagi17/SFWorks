@@ -1,0 +1,37 @@
+<aura:component controller="BoatType" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:handler name="init" value="{!this}" action = "{!c.doInit}" />
+    <aura:attribute name = "showNew" type = "Boolean" default = "false" />
+    <aura:attribute name = "boatTypes" type = "BoatType__c" />
+    <aura:attribute name="boatTypeId" type="String" default="" />
+    
+    <aura:registerEvent name= "sendBoatType" type="c:FormSubmit" />
+    
+    
+    
+    <lightning:layout horizontalAlign = "center" verticalAlign="end">
+        
+        <lightning:layoutItem padding="horizontal-medium" class="slds-grid_vertical-align-center">
+            
+            <lightning:select aura:id = "types" name="selectBoatType" onchange = "{!c.handleTypeChange}" label="">
+                <option value="" text="All Types"></option>
+                
+                <aura:iteration items="{!v.boatTypes}" var="boatType">
+                    <option text="{!boatType.Name}" value="{!boatType.Id}"></option>
+                </aura:iteration>
+                
+            </lightning:select>
+        </lightning:layoutItem>
+        
+        <lightning:layoutItem padding="horizontal-medium" class="slds-grid_vertical-align-center">
+            <lightning:button class="slds-button" variant="brand" label="Search" title="Search" onclick="{!c.onFormSubmit}" />
+        </lightning:layoutItem>
+        
+        <lightning:layoutItem padding="horizontal-medium" class="slds-grid_vertical-align-center">
+            <aura:if isTrue = "{!v.showNew}">
+            	<lightning:button class="slds-button" label="New" title="New" onclick="{! c.handleNewClick }"/>
+            </aura:if>
+        </lightning:layoutItem>
+    </lightning:layout>
+    
+</aura:component>

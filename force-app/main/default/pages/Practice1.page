@@ -1,0 +1,23 @@
+<apex:page standardController="Account" recordSetVar="AccountVar" sidebar="false">
+    <apex:pageBlock title="Accounts">
+        <apex:pageBlockSection title="List of Accounts">
+ 
+            <apex:pageBlockTable value="{!AccountVar}" var="accvar">
+                <apex:column value="{!accvar.Name}"/>
+                <apex:column value="{!accvar.Phone}"/>
+                <apex:column value="{!accvar.Industry}"/>
+                <apex:column value="{!accvar.Name}"/>
+            </apex:pageBlockTable>
+          
+           
+                       <apex:pageBlockTable value="{!AccountVar}" var="accvar">
+                <apex:column value="{!accvar.Name}"/>
+                <apex:column value="{!accvar.Phone}"/>
+                <apex:column value="{!accvar.Industry}"/>
+                <apex:column value="{!accvar.Name}"/>
+            </apex:pageBlockTable>
+        
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+ 
+</apex:page>

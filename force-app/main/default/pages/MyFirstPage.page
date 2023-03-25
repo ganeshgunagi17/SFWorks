@@ -1,0 +1,20 @@
+<apex:page standardController="Account">
+  <h1>Hello !! this is my first visual force page</h1><br/><br/>
+<b>  Welcome to the world of Salesforce.</b>
+
+<apex:pageBlock title="Billing">
+<apex:tabPanel switchType="Ajax">
+       <apex:tab label="Opportunities">
+           
+       <apex:relatedList list="Opportunities"/>
+       </apex:tab>
+       <apex:tab label="Cases">
+           
+       <apex:relatedList list="Cases"/>
+       </apex:tab>
+    </apex:tabPanel>
+    <apex:detail relatedList="false"/>
+
+
+</apex:pageBlock>
+</apex:page>

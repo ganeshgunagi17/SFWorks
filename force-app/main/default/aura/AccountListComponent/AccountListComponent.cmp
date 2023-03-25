@@ -1,0 +1,25 @@
+<aura:component controller="AccountsController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute type="String" name="searchKey"/>
+    <aura:attribute type="List" name="accountList"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInitCall}"/>
+    <lightning:notificationsLibrary aura:id="notify"/>
+    <lightning:card iconName="standard:account" title="Search Account">
+    	<lightning:layout>
+    		<lightning:layoutItem>
+            	<lightning:input type="text" value="{!v.searchKey}" onchange="{!c.checkAccount}"></lightning:input>
+            </lightning:layoutItem>
+    	</lightning:layout>
+    </lightning:card>
+    <lightning:card iconName="standard:account" title="Account List">
+        <lightning:layout> 
+                	<lightning:layoutItem>
+                        <aura:iteration items="{!v.accountList}" var ="acc">
+                        {!acc.Name} <br/>
+                            {!acc.Phone}
+                            </aura:iteration>
+            		</lightning:layoutItem>		
+        </lightning:layout>
+    </lightning:card>
+    {!v.body}
+</aura:component>

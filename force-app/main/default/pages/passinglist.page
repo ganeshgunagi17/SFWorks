@@ -1,0 +1,31 @@
+<apex:page standardController="Contact" sidebar="false" recordSetVar="cont">
+<apex:form >
+    <apex:pageBlock title="Passing Accounts">
+        <apex:pageBlockSection >
+            <apex:pageBlock title="List of Contacts">
+                <apex:pageBlockTable value="{!cont}" var="con">
+                    <apex:column >
+                        <apex:commandLink value="{!con.Name}" reRender="frm">
+                            <apex:param name="ContactDetail" value="{!con.Id}"/>
+                            <apex:param name="Name" value="{!con.Name}"/>
+                            </apex:commandLink>
+                    </apex:column>
+                     
+                    <apex:column value="{!con.Phone}"/>
+                    <apex:column value="{!con.Name}"/>
+                    <apex:column value="{!con.Name}"/>
+                    <apex:column value="{!con.Name}"/>
+                </apex:pageBlockTable>
+            
+            </apex:pageBlock>
+            
+            
+            <apex:pageBlock title="{!$CurrentPage.parameters.Name}" id="frm">
+                <apex:detail subject="{!$CurrentPage.parameters.ContactDetail}" relatedList="false"/>
+            </apex:pageBlock>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:form>
+
+
+</apex:page>

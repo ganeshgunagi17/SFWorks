@@ -1,0 +1,9 @@
+<apex:page standardController="Account" extensions="ExtensionClass">
+    <apex:form >
+    	<apex:pageBlock >
+            {!industry}
+        	<apex:inputField value="{!account.industry}"/>
+            <apex:commandButton action="{!save}" value="Save"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

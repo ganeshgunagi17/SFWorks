@@ -1,0 +1,14 @@
+<apex:page standardController="Account">
+ <apex:pageBlock title="Page displaying results">
+     <apex:tabPanel >
+         <apex:tab label="Case">
+             <apex:relatedList list="Cases"/>
+         </apex:tab>
+         <apex:tab label="Accounts">
+             <apex:detail relatedList="false"/>
+         </apex:tab>
+         
+     </apex:tabPanel>
+ 
+ </apex:pageBlock>
+</apex:page>

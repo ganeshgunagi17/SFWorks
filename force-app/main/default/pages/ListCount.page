@@ -1,0 +1,9 @@
+<apex:page controller="ListCount">
+    <apex:form >
+        Enter the number: <apex:inputText value="{!numberValue}"/>
+          <apex:commandButton value="List" action="{!GetResult}"/>
+           
+          Even List: <apex:outputText value="{!valuesList}" ></apex:outputText>
+          Odd List: <apex:outputText value="{!valuesList1}" ></apex:outputText>
+    </apex:form>
+</apex:page>

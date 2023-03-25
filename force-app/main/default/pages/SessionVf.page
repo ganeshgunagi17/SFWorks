@@ -1,0 +1,17 @@
+<apex:page controller="SessionController" readOnly="true">
+    <apex:form >
+    	<apex:pageBlock >
+            <apex:actionFunction action="{!name}" name="hello"/>
+        		<apex:inputCheckbox onclick="hello()"/>
+                
+          
+        </apex:pageBlock>
+    </apex:form>
+    
+    <script>
+    	function hello(){
+        alert('Hello'); 
+            SessionController.name();
+        }
+    </script>
+</apex:page>

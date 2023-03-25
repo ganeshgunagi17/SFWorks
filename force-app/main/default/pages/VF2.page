@@ -1,0 +1,12 @@
+<apex:page controller="GetAccountList">
+  <apex:form >
+      <apex:pageBlock title="GetAccountList">
+          <apex:pageBlockTable value="{!contacts}" var="cont">
+              <apex:column value="{!cont.Name}" title="contact name"/>
+              <apex:column value="{!cont.Phone}" title="Contact phone"/>
+              
+          </apex:pageBlockTable> 
+      </apex:pageBlock>
+     
+  </apex:form>
+</apex:page>

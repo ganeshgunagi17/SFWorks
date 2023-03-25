@@ -1,0 +1,4 @@
+<aura:component >
+	<aura:handler event="c:EventPropagationevt" name="propEvent" action="{!c.doEventHandling}" />
+    
+</aura:component>

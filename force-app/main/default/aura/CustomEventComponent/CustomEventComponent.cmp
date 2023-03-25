@@ -1,0 +1,4 @@
+<aura:component >
+    <aura:registerEvent name="compregister" type="c:CustomEvent"/>
+    <lightning:button label="Click to fire the custom event!!" onclick="{!c.handleCompEvent}"/>
+</aura:component>

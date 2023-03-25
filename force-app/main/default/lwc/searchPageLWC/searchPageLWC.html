@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Search" icon-name="standard:opportunity">
+        <lightning-layout>
+          <lightning-layout-item padding="around-small">
+            <lightning-input type="text" label="Product" onchange={handleChange}></lightning-input>
+          </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+            <template if:true={records}>
+                <template for:each={records} for:item="record">
+                        {record.Name}
+                 <span key={record.ID}>
+
+                    <img src={record.Image_url__c} height="100px" width="100px;"/>
+                 </span>    
+                </template>
+
+
+            </template>
+        </lightning-layout>
+    </lightning-card>
+
+</template>

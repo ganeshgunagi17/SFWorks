@@ -1,0 +1,12 @@
+<apex:page controller="sessionControl">
+    <apex:form >
+    	<apex:pageBlock >
+            <apex:inputText value="{!sessionName}"/>
+        	<apex:pageBlockTable value="{!listOfSessions}" var="sessVar">
+				<apex:column value="{!sessVar.name}"/>            	
+            </apex:pageBlockTable>
+            
+            <apex:commandButton value="submit" action="{!GetMySessions}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

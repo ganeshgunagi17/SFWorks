@@ -1,0 +1,13 @@
+<apex:page standardController="Contact">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockSection title="Contacts List" columns="3">
+            	<apex:inputField label="First Name" value="{!Contact.FirstName}"/>
+                
+            	<apex:inputField label="Last Name" value="{!Contact.LastName}"/>
+                
+                <apex:outputText title="Phone Number" value="{!Contact.phone}"></apex:outputText>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

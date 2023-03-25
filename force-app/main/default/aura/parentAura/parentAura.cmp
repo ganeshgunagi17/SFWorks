@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForRecordHome,lightning:isUrlAddressable,lightning:availableForFlowScreens" access="global">
+    <aura:attribute name="varVal" type="String"/>
+    <aura:attribute type="List" name="listOFIds"/>
+    <lightning:workspaceAPI aura:id="workspace"/>
+   <!-- <aura:handler name="init" value="{!this}" action="{!c.onPageReferenceChange}"/>-->
+<!-- <aura:handler name="init" value="{!this}" action="{!c.switchToNewTab}"/>-->
+    {!v.listOFIds}
+    <lightning:navigation aura:id="navigateService"/>
+    <c:childLwc onclick="{!c.switchToNewTab}" IdSelected="{!v.ListOFIds}"></c:childLwc>
+    {!v.varVal}
+</aura:component>	 dadsfda

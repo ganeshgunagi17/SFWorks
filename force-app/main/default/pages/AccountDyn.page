@@ -1,0 +1,15 @@
+<apex:page controller="NewAccountDyn">
+    <apex:form >
+    	<apex:pageBlock title="Account List">
+        	<apex:pageBlockTable value="{!AccountList}" var="acc" title="List of Accounts">
+            	<apex:repeat var="accountss" value="{!$ObjectType.Account.FieldSets.AccountFieldSet}">
+                	<apex:column value="{!acc[accountss]}"/>
+                </apex:repeat>
+                
+            </apex:pageBlockTable>
+            <apex:pageBlockButtons >
+            	hilllkasdfklj
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

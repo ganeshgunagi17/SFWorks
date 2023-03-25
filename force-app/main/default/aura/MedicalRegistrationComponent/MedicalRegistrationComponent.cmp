@@ -1,0 +1,46 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:registerEvent type="c:MedicalEvent" name="medEvent"/>
+    <aura:attribute type="String" name="PatientName"/>
+    <aura:attribute type="Decimal" name="PatientAge"/>
+    <aura:attribute type="String" name="PatientAddress"/>
+    <aura:attribute type="Decimal" name="PatientPhoneNumber"/>
+    <aura:attribute type="Date" name="AppointmentDate"/>
+    <aura:attribute type="String" name="PatientProblemDetails"/>
+    <aura:attribute type="Boolean" name="ExistingPatient"/>
+    <aura:attribute type="List" name="HospitalDetails"/>
+    
+     <div class="slds-page-header slds-align_absolute-center slds-text-heading_large">
+        	Med-Reg
+        </div>
+    <div class="slds-box slds-box_small slds-align_absolute-center">
+      
+
+    	<div class="slds-grid">
+        	<div class="slds-col slds-size_6-of-6" >
+                <span class="slds-size_large">
+                <lightning:input label="Patient Name" type="text" value="{!v.PatientName}"/>
+                 <lightning:input label="Patient Age" type="number" value="{!v.PatientAge}"/>
+                 <lightning:input label="Patient Phone Number" type="number" value="{!v.PatientPhoneNumber}"/>
+            </span>
+                <lightning:Select label="Choose Hospital" value="{!v.HospitalDetails}">
+                    <option value="">Select...</option>
+                    <option value="Hebbal">Belgaum Hospital</option>
+                </lightning:Select>
+                <lightning:input label="Appointment Date" type="date" value="{!v.AppointmentDate}"/>
+                 <lightning:input label="Description" type="text" value="{!v.PatientProblemDetails}"/>
+                 <lightning:input label="Existing Patient?" type="checkbox" value="{!v.ExistingPatient}" onchange="{!c.checkExisting}"/>
+                <br/><br/>
+                <lightning:button type='button' label="Submit" variant="Brand" onclick="{!c.processForm}"/>
+                <lightning:button type='button' label="Cancel" variant="Neutral" onclick="{!v.processForm}"/>
+            </div>
+            <div>
+                
+            </div>
+        </div>
+            
+           
+            
+    </div>
+    
+</aura:component>

@@ -1,0 +1,19 @@
+<apex:page Controller="AccountControllers">
+    <apex:form >
+        <apex:pageBlock >
+<apex:inputText value="{!AccountName}"/>
+        
+        <apex:commandButton action="{!SearchAccounts}" value="Search" reRender="acc"/>
+          
+            
+       
+        
+       <apex:pageBlockTable value="{!listAcco}" var="ls" id="acc">
+            	<apex:column value="{!ls.Name}"/>
+           <apex:column value="{!ls.rating}"/>
+           <apex:column value="{!ls.Industry}"/>
+            </apex:pageBlockTable>
+             </apex:pageBlock> 
+    	 </apex:form> 
+    
+</apex:page>

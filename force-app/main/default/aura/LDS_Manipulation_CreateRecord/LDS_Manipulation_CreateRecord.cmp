@@ -1,0 +1,14 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute name="createContact" type="Object"/>
+    <aura:attribute name="simpleContact" type="Object"/>
+    <aura:attribute name="contactError" type="String"/>
+    
+    <force:recordData aura:id="recordCreatorId"
+                      targetFields="{!v.simpleContact}"
+                      targetError="{!v.contactError}"
+                      targetRecord="{!v.createContact}"
+                      fields="Name,Rating"
+                      />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.startInit}"/>
+</aura:component>

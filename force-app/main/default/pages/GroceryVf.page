@@ -1,0 +1,9 @@
+<apex:page standardController="Grocery__c" recordSetVar="varSet">
+    <apex:pageBlock title="Grocery List">
+        <apex:pageBlockTable value="{!varSet}" var="groc">
+        	<apex:column value="{!groc.AccountName__c}"/>
+            <apex:column value="{!groc.Approval_Status__c}"/>
+            <apex:column value="{!groc.Grocery_Type__c}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,15 @@
+<aura:component controller="AccountList" >
+    <aura:attribute name="aclist" type="Account[]"/>
+    
+    <lightning:layout class="slds-page-header">
+   
+        <aura:iteration items="{!v.aclist}" var="item">
+        
+            {!item.Id} - {!item.Name} <br/>
+        </aura:iteration>
+        
+    	
+        <lightning:button label="Click" onclick="{!c.myAction}"/>
+    </lightning:layout>
+	
+</aura:component>

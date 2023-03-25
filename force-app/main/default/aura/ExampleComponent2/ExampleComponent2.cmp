@@ -1,0 +1,7 @@
+<aura:component >
+    <aura:attribute name="toValidate" type="String" default="Ganesh"/> <!--this will set the toValidate variable with default as Ganesh-->
+    
+    <lightning:input name="myName" aura:id="chckid" label="Enter your name" value="{!v.toValidate}"/><!--using the above attribute any text entered will be save in toValidate variable-->
+    <lightning:button label="Validate" onclick="{!c.validateName}"/>
+    <lightning:input aura:id="mynameid" label="enter ur name"/><!--if we dont give value with id it will search and set the value-->
+</aura:component>

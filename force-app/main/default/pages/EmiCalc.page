@@ -1,0 +1,17 @@
+<apex:page controller="EMICalculator" sidebar="false" >
+    <apex:form >
+    	<apex:pageBlock >
+            <apex:pageBlockSection title="EMI Calculator">
+            	Enter the loanAmount: <apex:inputText value="{!loanAmount}"/>
+                Enter the rate of Interest: <apex:inputText value="{!Rate}"/>
+                
+                Enter the number of months: <apex:inputText value="{!numberOfMonths}"/>
+                <apex:commandButton action="{!TotalInterest}" value="Calculate Emi" reRender="frm"/>
+                
+            </apex:pageBlockSection>
+           Emi per month is: <apex:outputText value="{!totalEmi}" id="frm"></apex:outputText>
+            
+        
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

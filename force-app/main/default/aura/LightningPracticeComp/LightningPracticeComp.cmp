@@ -1,0 +1,15 @@
+<aura:component >
+    <aura:attribute type="String" name="lightname"/>
+    <lightning:layout class="slds-page-header">
+    	<lightning:layoutItem padding="vertical-large">
+            <div class="slds-page-header_label">
+            My comp
+                <lightning:input type="text" name="myname" value="{!v.lightname}"  placeholder="Enter the name"/>
+            </div>
+       		  
+              <lightning:button name="click" label="clickme!!" onclick="{!c.Clickevent}"/>
+        </lightning:layoutItem>
+    </lightning:layout>
+   
+  
+</aura:component>

@@ -1,0 +1,9 @@
+<apex:page title="MyFirst">
+    <apex:pageBlock >
+        {!$User.Username}<br/>
+        {!$User.FirstName}<br/>
+        {!Today()+9}
+        {!IF(contains('Ganesh','nesh'),'yes','nooo')}
+        {!If($User.IsActive,$User.Username,'inactive')}
+    </apex:pageBlock>
+</apex:page>

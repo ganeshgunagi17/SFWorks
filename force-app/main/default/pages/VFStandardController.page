@@ -1,0 +1,19 @@
+<apex:page standardController="Account">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockSection >
+            	Enter your Account Name: <apex:inputText value="{!Account.Name}"/>
+                Industry: <apex:inputText value="{!Account.Industry}"/>
+                <apex:detail relatedList="false" />
+                
+            </apex:pageBlockSection>
+            <apex:commandButton value="Save" action="{!save}"/>
+            <apex:commandButton value="Quick save" action="{!quicksave}"/>
+          <!--  <apex:commandButton value="Prev" action="{!previous}"/>-->
+           <!-- <apex:commandButton value="Next" action="{!next}"/>-->
+            <apex:commandButton value="Cancel" action="{!cancel}"/>
+            {!$User.FirstName}
+        </apex:pageBlock>
+    </apex:form>
+   <!-- <apex:relatedList  list="contacts"/> -->
+</apex:page>

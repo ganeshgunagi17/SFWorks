@@ -1,0 +1,22 @@
+<apex:page controller="AccountContacts2">
+    <apex:form >
+    	<apex:pageBlock >
+            Search:<apex:inputText value="{!GetData}"/>
+             <apex:commandButton value="Search" action="{!ShowData}"/>
+        	<apex:pageBlockTable value="{!AccountList}" var="acclist">
+               
+                 <apex:column value="{!acclist.Name}"/>
+                 <apex:column value="{!acclist.Industry}"/>
+                 <apex:column value="{!acclist.Rating}"/>
+                <apex:column >
+                    <apex:pageBlockTable value="{!accList.Contacts}" var="conList">
+                        <apex:column value="{!conList.LastName}"/>
+                        <apex:column value="{!conList.Phone}"/>
+                        <apex:column value="{!conList.Department}"/>
+                    </apex:pageBlockTable>
+                </apex:column>
+            </apex:pageBlockTable>	
+        </apex:pageBlock>
+        
+            </apex:form>
+</apex:page>

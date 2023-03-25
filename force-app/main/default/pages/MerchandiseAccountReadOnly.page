@@ -1,0 +1,24 @@
+<apex:page controller="MerchandiseController" readOnly="true">
+    <apex:form >
+    	<apex:dataTable border="3" value="{!accountList}" var="acc">
+        
+            <apex:column >
+            	<apex:facet name="header">Account Name</apex:facet>
+                <apex:outputText >{!acc.Name}</apex:outputText>
+            </apex:column>
+            
+            <apex:column >
+            	<apex:facet name="header">Account Type</apex:facet>
+                    <apex:outputText >{!acc.Type}</apex:outputText>
+            
+            </apex:column>
+            
+            <apex:column >
+            
+            	<apex:facet name="header">Account Industry</apex:facet>
+                <apex:outputText >{!acc.Industry}</apex:outputText>
+            </apex:column>
+                
+        </apex:dataTable>
+    </apex:form>
+</apex:page>

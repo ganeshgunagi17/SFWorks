@@ -1,0 +1,10 @@
+<apex:component >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Component
+  <!-- End Default Content REMOVE THIS -->
+  hello
+  <apex:pageBlock >
+      {!$User.FirstName}
+  </apex:pageBlock>
+</apex:component>

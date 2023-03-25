@@ -1,0 +1,15 @@
+<apex:page controller="SelectListApex">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:selectList value="{!namelist}">
+            	<apex:selectOptions value="{!nameOptions}"></apex:selectOptions>
+            </apex:selectList>
+        </apex:pageBlock>
+        <apex:commandButton action="{!getNames}" value="Click!!" rerender="refresh"/>
+        
+    </apex:form>
+    <apex:outputPanel id="refresh">
+        <apex:dataList value="{!namelist}" var="na">{!na}</apex:dataList>
+        </apex:outputPanel>
+        
+</apex:page>

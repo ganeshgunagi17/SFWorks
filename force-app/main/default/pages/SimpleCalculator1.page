@@ -1,0 +1,16 @@
+<apex:page controller="SimpleCalculator">
+    <apex:form >
+    	Enter Number 1: <apex:inputText value="{!num1}"/>
+        Enter Number 1: <apex:inputText value="{!num2}"/>
+        <apex:pageBlock >
+        	<apex:pageBlockSection >
+            	<apex:commandButton value="Add" action="{!add}" reRender="frm"/>
+                <apex:commandButton value="Sub" action="{!sub}" reRender="frm"/>
+				<apex:commandButton value="Mul" action="{!mul}" reRender="frm"/>
+                <apex:commandButton value="Div" action="{!div}" reRender="frm"/>
+            </apex:pageBlockSection>
+            The result is:<apex:outputText value="{!result}" id="frm"></apex:outputText>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

@@ -1,0 +1,46 @@
+<aura:component controller="AccountsList" implements="force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes,force:lightningQuickAction">
+    <aura:attribute type="List" name="accountValues"/>
+    <aura:attribute type="String" name="searchString"/>
+    
+    <aura:registerEvent type="c:FilterComponentEvent" name="filterAppEvent"/>
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    
+    <lightning:button label="Filter" type="button" variant="Brand" onclick="{!c.showField}"/><br/>
+   
+    <div id="fiterFields" style="display:none" class="slds-col slds-size_1-of-6">
+        <lightning:input label="Search" value="{!v.searchString}" placeholder="Enter some value"/>
+        <lightning:button label="Search" type="button" variant="Neutral" onclick="{!c.fireEvent}"/>
+    </div>
+    <br/>
+   <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+  <thead>
+    <tr class="slds-line-height_reset">
+      <th class="" scope="col">
+        <div class="slds-truncate" title="Account Name">Account Name</div>
+      </th>
+         <th class="" scope="col">
+        <div class="slds-truncate" title="Id">Account Id</div>
+      </th>
+         <th class="" scope="col">
+        <div class="slds-truncate" title="Phone">Account Phone</div>
+      </th>
+      </tr>
+       </thead>
+      
+       		<aura:iteration items="{!v.accountValues}" var="acc">
+                 <tbody>
+           		<td>
+                	{!acc.Name}
+                </td>
+                <td>
+                	{!acc.Id}
+                </td>
+                <td>
+                	{!acc.Phone}
+                </td>
+                 </tbody>
+           </aura:iteration>
+      
+    </table>
+   
+</aura:component>

@@ -1,0 +1,3 @@
+<apex:page standardController="Books__c" extensions="ApexControllerSelection" action="{!callAura}" recordSetVar="test">
+
+</apex:page>

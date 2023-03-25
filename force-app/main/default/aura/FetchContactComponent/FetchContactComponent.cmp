@@ -1,0 +1,4 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+	<aura:attribute name="contactList" type="List"></aura:attribute>
+    <aura:handler name="init" value="{!this}" action="{!c.callInit}"/>
+</aura:component>

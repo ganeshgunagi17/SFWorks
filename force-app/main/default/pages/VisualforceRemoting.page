@@ -1,0 +1,26 @@
+<apex:page controller="SessionRemote">
+    <apex:form >
+    	<apex:pageBlock >
+        	ip<apex:inputText id="inputid" label="Input here"/>
+           op <apex:outputText id="result" label="values"></apex:outputText>
+            <button onclick="getSessions()">
+            GetSessions
+            </button>
+        </apex:pageBlock>
+    </apex:form>
+    
+    <script>
+    	function getSessions(){
+        	var accountname=document.getElementById("inputid");    
+            
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.SessionRemote.getMySessions}',accountname,
+                function(result,event){
+                    if(event.status){
+                        document.getElementById('result').innerHTML=result.Name;
+                        }
+                    }
+                );
+        }
+    </script>
+</apex:page>

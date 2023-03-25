@@ -1,0 +1,12 @@
+<!--SimpleClientServer-->
+<aura:component controller="SimpleServerSideController">
+    
+    <aura:attribute name="message" type="String" default="Mtree"/>
+    <lightning:layout class="slds-grid">
+        <lightning:layoutItem padding="horizontal-large">
+        <lightning:input type="text" name="myinput" value="{!v.message}" label="Enter Name" required="true"/>
+    <lightning:button label="Click Me!!" onclick="{!c.GetVal}"/>
+        </lightning:layoutItem>
+    
+        </lightning:layout>
+</aura:component>

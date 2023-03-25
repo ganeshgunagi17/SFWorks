@@ -1,0 +1,24 @@
+<apex:page standardController="Account" recordSetVar="acc" title="Account Screen">
+    <apex:form >
+       <apex:pageBlock title="Account List">
+    
+    		<apex:pageBlockTable value="{!acc}" var="accou">
+            		<apex:column value="{!accou.Name}"/>
+                 
+                <apex:column value="{!accou.Industry}"/>
+               
+                <apex:column value="{!accou.Rating}"/>
+                <apex:column value="{!accou.Name}"/>
+               
+            </apex:pageBlockTable>
+           <apex:pageBlockButtons >
+           	<apex:commandButton action="{!Save}" Value="Save me"/>
+                          	<apex:commandButton action="{!QuickSave}" title="Quick Save"/>
+                          	<apex:commandButton action="{!Next}" title="NExt"/>
+                          	<apex:commandButton action="{!Previous}" title="Previous"/>
+           </apex:pageBlockButtons>
+    </apex:pageBlock>
+    </apex:form>
+ 
+  
+</apex:page>

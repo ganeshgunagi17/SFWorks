@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute type="boolean" name="medOpen" default="false"/>
+    <aura:attribute type="String" name="valueFromChild"/>
+    <aura:handler event="c:MedicalEvent" name="medEvent" action="{!c.handleEvent}"/>
+    
+    <c:MedicalRegistrationComponent/>
+   
+    
+    
+</aura:component>

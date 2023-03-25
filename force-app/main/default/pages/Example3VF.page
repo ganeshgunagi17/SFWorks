@@ -1,0 +1,13 @@
+<apex:page controller="Example3Apex">
+    <apex:form >
+    	<apex:pageBlock title="Account details">
+        Name	<apex:inputText value="{!accname}"/>
+            <apex:pageBlockTable value="{!allAccounts}" var="accnm">
+                <apex:column value="{!accnm.Name}"/>
+                <apex:column value="{!accnm.Id}"/>
+                <apex:column value="{!accnm.Industry}"/>
+            </apex:pageBlockTable>
+            <apex:commandButton value="Submit" action="{!getaccountdetails}" />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

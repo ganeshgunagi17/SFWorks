@@ -1,0 +1,7 @@
+<aura:component>
+    <aura:attribute name="fieldName" type="Account" default="{'sObjectType':'Account','Name':'Ganesh'}"/>
+    <lightning:input aura:id="Name" label="Opportunity Name"></lightning:input>
+   <!-- <lightning:input value="{!v.fieldName.CloseDate}" aura:id="Closedate"  label="Opportunity Close date"></lightning:input>    -->
+    
+    <lightning:button label="Click here" onClick="{!c.displayAccount}" ></lightning:button>
+</aura:component>

@@ -1,0 +1,17 @@
+<apex:page >
+  
+  <apex:form >
+      <apex:pageBlock >
+          <apex:selectList id="Countries" label="Select">
+                    <apex:selectoption itemLabel="USA" itemValue="USA"></apex:selectoption>
+
+<apex:selectoption itemLabel="Kabul" itemValue="Kabul"></apex:selectoption>
+
+<apex:selectoption itemLabel="Education director" itemValue="Education director"></apex:selectOption>
+          </apex:selectList>
+          
+          <apex:commandButton value="Submit" action="{!getCountries}"/>
+      </apex:pageBlock>
+  </apex:form>
+
+</apex:page>

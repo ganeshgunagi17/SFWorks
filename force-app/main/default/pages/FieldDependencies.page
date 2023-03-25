@@ -1,0 +1,14 @@
+<apex:page standardController="MindtreeNew__c">
+    
+    <apex:form >
+    	<apex:pageBlock >
+            <apex:pageBlockSection columns="2" title="Campus Structure">
+                <apex:inputField value="{!MindtreeNew__c.City__c}" label="Choose City.."/>
+            <apex:outputField value="{!MindtreeNew__c.Campus__c}" label="Choose Campus.."></apex:outputField> 
+        
+        
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

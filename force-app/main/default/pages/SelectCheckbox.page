@@ -1,0 +1,21 @@
+<apex:page controller="SelectCheckboxClass">
+    <apex:form >
+    	<apex:pageBlock >
+        <apex:selectCheckboxes value="{!countries}"> <!-- this will invoke getCountries() method
+in the controller -->
+            
+
+            <apex:selectOptions value="{!items}"/> <!-- this will invoke getItems() method in
+the controller-->
+
+        </apex:selectCheckboxes><br/>
+            <apex:commandButton value="Test" action="{!test}"
+                                rerender="out" status="status"/>
+            <apex:outputPanel id="out">
+                <apex:dataList value="{!countries}" var="c">{!c}</apex:dataList>
+            </apex:outputPanel>
+
+
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

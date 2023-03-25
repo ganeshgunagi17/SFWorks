@@ -1,0 +1,31 @@
+<apex:page standardController="Account" recordSetVar="acc">
+<apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!acc}" var="a">
+            <apex:column headerValue="Account Name" value="{!a.Name}">
+            
+           <!-- <apex:inputField value="{!a.Name}"/>-->
+           
+            
+            </apex:column>
+            
+ 
+            <apex:column value="{!a.Industry}"/>
+            <apex:column value="{!a.Rating}"/>
+           
+        </apex:pageBlockTable>
+        <apex:pageBlockButtons >
+                                <apex:commandButton Value="Next" action="{!Next}"/>
+                                <apex:commandButton Value="LastPage" action="{!Last}"/>
+                                <apex:commandButton Value="FirstPage" action="{!First}"/>
+                                <apex:commandButton Value="Next" action="{!Previous}"/>
+                                <apex:commandButton Value="Save" action="{!Save}"/>
+                                <apex:commandButton Value="QuickSave" action="{!QuickSave}"/>
+                                <apex:commandButton Value="Cancel" action="{!Cancel}"/>
+                                <apex:commandLink value="Go to VF0903" action="/apex/VF0903"/>
+        </apex:pageBlockButtons>
+            </apex:pageBlock>
+</apex:form>
+    
+ 
+</apex:page>

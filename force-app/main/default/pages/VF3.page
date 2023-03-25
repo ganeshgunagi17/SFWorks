@@ -1,0 +1,14 @@
+<apex:page controller="MyController1">
+  <apex:form >
+      <apex:pageBlock title="My Controller">
+          <apex:pageBlockSection >
+               <apex:inputText value="{!NameMe}" label="HelloName"/>
+          </apex:pageBlockSection>
+       
+         
+       Hey this is {!myname}
+        
+      </apex:pageBlock>
+     
+  </apex:form>
+</apex:page>

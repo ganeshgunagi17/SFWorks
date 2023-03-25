@@ -1,0 +1,19 @@
+<template>
+    
+        <div class="slds-m-around_medium">
+            <h1 class="slds-text-heading_small">Calculator App</h1>
+        
+        </div>
+        <div>
+            <h2>Enter numbers....</h2>
+            <lightning-input type="number" name="input1" value={firstNum} label="First number" placeholder="enter first number here...."></lightning-input><br/>
+            <lightning-input type="number" name="input2" value={secondnum} label="Second number" placeholder="enter second number here...."></lightning-input>
+           
+        </div>
+        <div>
+            <lightning-button variant="base" label="Base" title="Calculate" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+        </div>
+       {result}
+    
+    </template>
+    

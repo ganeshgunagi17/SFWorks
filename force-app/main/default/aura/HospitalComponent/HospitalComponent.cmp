@@ -1,0 +1,21 @@
+<aura:component >
+    <aura:attribute name="PatName" type="String" default="Weuyuasouaosas"/>
+    <aura:attribute name="list" type="List" default="[{'label':'ganesh','value':'ganesh gunagi'}
+                                                   ,{'label':'pooja','value':'pooja gunagi'}]"/>
+	<lightning:layout class="slds-page-header">
+    	<lightning:layoutItem padding="vertical-small">
+            <lightning:input aura:id="pname" name="name" value="{!v.PatName}" required="true" label="Enter your name..."/>
+            
+            <lightning:formattedNumber aura:id="page" name="age" required="true" label="Enter your age.."/>
+            
+            <lightning:checkboxGroup aura:id="checkbox" name="Checkbox" required="true" label="Married?"/>
+            
+            <lightning:comboBox aura:id="combox" label="Select gender.." options="{!v.list}" onchange="{!c.handleChangeValue}">
+                
+                           	
+            </lightning:comboBox>
+            
+            
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

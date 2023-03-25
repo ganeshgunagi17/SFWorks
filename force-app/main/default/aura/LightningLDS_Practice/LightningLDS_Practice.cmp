@@ -1,0 +1,31 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="simpleRecords" type="Object"/>
+    <aura:attribute name="record" type="Object"/>
+    <lightning:card title="Lightning LDS Record View Form Account">
+    	<!--<lightning:recordForm recordId="{!v.recordId}"
+                              objectApiName="Account"
+                              fields="Name,Industry">
+        
+        </lightning:recordForm>-->
+       <!-- 
+        <lightning:recordEditForm recordId="{!v.recordId}" objectApiName="Account">
+            <lightning:messages/>
+            <lightning:inputField fieldName="Name"/>
+            
+        </lightning:recordEditForm>
+        
+              <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="Account">
+            <lightning:messages/>
+            <lightning:outputField fieldName="Name"/>
+            
+        </lightning:recordViewForm>-->
+        <force:recordData 
+                          recordId="{!v.recordId}" 
+                          targetFields="{!v.simpleRecords}" 
+                          targetRecord="{!v.record}" 
+                          mode="EDIT" 
+                          fields="Name,Industry"/>
+         <lightning:inputField title="Record Name" fieldName="{!v.simpleRecords.Name}" />
+    </lightning:card>
+</aura:component>

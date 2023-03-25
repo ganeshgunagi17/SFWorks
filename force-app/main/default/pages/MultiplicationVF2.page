@@ -1,0 +1,9 @@
+<apex:page controller="MulitplyNumbers">
+    <apex:form >
+    	<apex:pageBlock title="Multiplication Series">
+        	Enter a number: <apex:inputText value="{!integer1}"/>
+            <apex:commandButton action="{!multiplyme}" value="Click.."/>
+            <apex:outputText value="{!multiplylist}"></apex:outputText>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

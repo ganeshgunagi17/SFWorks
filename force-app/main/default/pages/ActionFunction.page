@@ -1,0 +1,20 @@
+<apex:page controller="ActionCall">
+    <apex:pageBlock >
+        
+    	<apex:form >
+            <button>
+                
+            <apex:actionFunction action="{!SayHello}" name="CallController" /> 
+               <apex:inputCheckbox onclick="JSFunction()"/>
+            </button>
+        	
+        </apex:form>
+    </apex:pageBlock>
+
+<script>
+function JSFunction(){
+   alert('HEllo');
+    CallController();
+}
+</script>
+    </apex:page>

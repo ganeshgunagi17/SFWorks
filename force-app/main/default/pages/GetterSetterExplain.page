@@ -1,0 +1,6 @@
+<apex:page controller="GetterSetterExplain">
+    <apex:form >
+    	<apex:inputText value="{!userinput}"/>
+        the value is : {!userinput}
+    </apex:form>
+</apex:page>

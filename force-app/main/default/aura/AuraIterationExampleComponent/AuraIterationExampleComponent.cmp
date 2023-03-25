@@ -1,0 +1,12 @@
+<aura:component >
+    <aura:attribute name="personName" type="String"/>
+    <aura:attribute name="detailList" type="List" default="['Ganesh','Glimpsa','Gunagi']"/>
+    
+    <lightning:input value="{!v.personName}" label="Enter the person name"/>
+   
+    <aura:iteration items="{!v.detailList}" var="listname">
+    	<p>{!listname}</p>
+    
+    </aura:iteration>
+    <lightning:button onclick="{!c.displaycn}" label="submit"/>
+</aura:component>

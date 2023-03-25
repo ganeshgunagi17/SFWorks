@@ -1,0 +1,24 @@
+<apex:page standardController="Account" showHeader="true" tabStyle="account" id="Accounttab">
+
+
+<style>
+.activeTab {background-color: Pink; color:red}
+.inactive {background-color: Black; color:blue}
+</style>
+
+<apex:tabPanel activeTabClass="activeTab" inactiveTabClass="inactive" switchType="Ajax" id="acctTabPanel" selectedTab="tabdetails">
+<apex:detail relatedList="false"/>
+ <apex:tab label="Account">
+   <apex:relatedList list="Cases"/>
+ </apex:tab>
+ 
+ <apex:tab label="Opportunities">
+   <apex:relatedList list="Opportunities"/>
+ 
+ </apex:tab>
+ 
+ 
+</apex:tabPanel>
+
+  
+</apex:page>

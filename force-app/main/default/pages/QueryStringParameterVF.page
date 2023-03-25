@@ -1,0 +1,36 @@
+<apex:page standardController="Account">
+    <apex:form >
+    <apex:pageBlock title="Contacts-Accounts">
+    	<apex:dataTable value="{!account.Contacts}" var="accCon" cellpadding="5" border="3" bgcolor="skyblue">
+            <apex:column >
+        		 <apex:facet name="header">Name</apex:facet>
+             	 {!accCon.FirstName}
+            </apex:column>
+            <apex:column >
+            <apex:commandLink >
+            <apex:facet name="header">Name</apex:facet>
+             	 {!accCon.FirstName}
+                <apex:param value="{!accCon.id}" name="pid"/>
+            
+            </apex:commandLink>
+            
+            
+            
+            </apex:column>
+            
+            
+            
+            <apex:column >
+           		 <apex:facet name="header">Last Name</apex:facet>
+           		 {!accCon.LastName}
+            </apex:column>
+        	
+        
+        </apex:dataTable>
+        
+       
+    </apex:pageBlock>
+        </apex:form>
+    
+     <apex:detail relatedList="false" subject="{!$CurrentPage.parameters.pid}"/>
+</apex:page>

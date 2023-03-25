@@ -1,0 +1,12 @@
+<apex:page controller="DisplayName">
+    <apex:form >
+    	<apex:pageBlock title="My Name..">
+        	Name:<apex:inputText value="{!namevalue}"/>
+             
+            <apex:commandButton action="{!DisplayMyName}" value="Submit1"/>
+            <apex:outputText value="{!namevalue}"></apex:outputText>
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

@@ -1,0 +1,12 @@
+<apex:page >
+    <script>
+    	function Show(){
+            
+            var name1=Document.getElementById('{!$Component.fm.name}').value;
+            alert(name1);
+            }
+    </script>
+    <apex:form id="fm">
+        <apex:inputText id="name" onchange="Show()"></apex:inputText>
+    </apex:form>
+</apex:page>

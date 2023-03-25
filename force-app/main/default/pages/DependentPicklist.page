@@ -1,0 +1,12 @@
+<apex:page standardController="Laptops__c">
+    
+    <apex:form >
+    	<apex:pageBlock title="Dependent Picklists">
+        	<apex:pageBlockSection columns="2">
+            	<apex:inputField value="{!Laptops__c.Laptop_Brand__c}" label="Controlling Picklist"/>
+                <apex:inputField value="{!Laptops__c.Laptop_Statu__c}" label="Dependent Picklist"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+             
+</apex:page>

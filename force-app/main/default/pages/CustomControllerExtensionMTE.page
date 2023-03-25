@@ -1,0 +1,15 @@
+<apex:page standardController="Account" extensions="controllerExtensions">
+    
+    {!greeting} <p/>    <!--this will call the getGreeting() method in the controller -->
+    <apex:form >
+    	<apex:pageBlock >
+            
+            
+            
+            <apex:inputField value="{!account.name}"/>
+            <apex:commandButton action="{!save}" value="save"/>
+        
+        </apex:pageBlock>
+    </apex:form>
+               
+</apex:page>

@@ -1,0 +1,24 @@
+<apex:page controller="MyController">
+    <apex:form >
+    	<apex:pageBlock >
+        	Hello Click Me!!
+            
+            <button onclick="MyJavscript('Ganesh')">
+                Say Hello!!
+            </button>
+        </apex:pageBlock>
+    </apex:form>
+    <script>
+    function MyJavscript(helloto){
+        Visualforce.remoting.manager.invokeAction('{!$RemoteAction.MyController.SayHello}',helloto,
+        function(result,event){
+            
+            if(event.status){
+                alert(result);
+                document.getElementById("result1").innerHTML = result;
+					}
+                });
+        }
+    </script>
+   Result: <apex:outputPanel id="result1"></apex:outputPanel> 
+</apex:page>

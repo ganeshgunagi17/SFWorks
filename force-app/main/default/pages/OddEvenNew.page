@@ -1,0 +1,24 @@
+<apex:page controller="OddEvenNew">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:inputText value="{!enterNumber}"/>
+            
+            <apex:pageBlockTable value="{!EvenOddLists}" var="le" id="lisa">
+            	<apex:column headerValue="Odd List" value="{!le.oddList}"/>
+                <apex:column headerValue="Even List" value="{!le.evenList}"/>
+                <apex:column headerValue="Select">
+                	<apex:inputCheckbox value="{!le.varcheck}"/>
+                </apex:column>
+ 			
+            
+            </apex:pageBlockTable>
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Submit" action="{!submit}"/>
+                 <apex:commandButton value="Add" action="{!Calculate}" reRender="lisa"/>
+            </apex:pageBlockButtons>
+           Odd Value: <apex:outputText value="{!oddVal}"></apex:outputText><br/>
+                Even Value: <apex:outputText value="{!evenVal}"></apex:outputText>
+
+                    </apex:pageBlock>
+    </apex:form>
+</apex:page>

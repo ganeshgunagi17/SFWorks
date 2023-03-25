@@ -1,0 +1,11 @@
+<apex:page sidebar="false" standardController="Laptops__c">
+
+<apex:form >
+    <apex:pageBlock title="Hello {!$User.FirstName} {!$User.LastName}">
+Model Name:<apex:inputField value="{!Laptops__c.Model_Name__c}"/>
+Billing Address:<apex:inputField value="{!Laptops__c.Billing_Address__c}"/><br/>
+<apex:commandButton value="Save Me" action="{!save}"/>
+    </apex:pageBlock>
+</apex:form>
+
+</apex:page>

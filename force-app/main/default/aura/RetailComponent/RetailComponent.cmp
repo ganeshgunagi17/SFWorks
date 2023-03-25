@@ -1,0 +1,29 @@
+<aura:component controller="DisplayRetailItems">
+    <aura:attribute name="retailName" type="String"/>
+    <aura:attribute name="retailType" type="String[]" />
+    <aura:attribute name="retailQuantity" type="Integer"/>
+    <aura:attribute name="retailPrice" type="Decimal"/>
+    <aura:attribute name="retaillist" type="List"/>
+    
+    <lightning:input aura:id="itemName" label="Enter the item name..." value="{!v.retailName}"/>
+    
+    <lightning:select aura:id="itemType" label="Choose the item type.." value="{!v.retailType}" onchange="{!c.displayChange}">
+    	<option value="">Choose one...</option>
+        <option value="Vehicle">Vehicle Item</option>
+        <option value="Grocery">Grocery Item</option>
+        <option value="Households"> Households Item</option>
+        <option value="Stationery">Stationery Item</option>
+    </lightning:select>
+    
+    <lightning:input aura:id="itemQuantity" label="Enter the item quantity..." value="{!v.retailQuantity}"/>
+    
+    <lightning:input aura:id ="itemNameChoosen" label="Choosen Item name.."/>
+    
+    <lightning:input aura:id="itemPrice" label="Enter the item price.." value="{!v.retailPrice}"/>
+    
+    <aura:iteration items="{!v.retaillist}" var="item1">
+        <option value="{!item1.value}"/>
+    </aura:iteration>
+    
+    <lightning:button aura:id="itemSubmit" label="Place Order" onclick="{!c.processOrder}"/>
+</aura:component>
