@@ -1,0 +1,103 @@
+<!---
+  * Lightning Component : AddressUpdationOnAccountComp
+  * Date				: 18th Aug 2021
+  * Description         : AddressUpdationOnAccountComp is the lightning component which is launched when
+						  lightning quick action button, Change Address, is clicked on account detail page.
+-->
+<aura:component controller="AddressUpdationOnAccountController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global">
+	<aura:attribute type="String" name="accountAddress" />
+	<aura:attribute type="Object" name="accountFields" />
+	<aura:attribute name="accountError" type="String" />
+	<aura:attribute name="changeAddress" type="Boolean" default="false" />
+	<aura:attribute name="submissionList" type="List"></aura:attribute>
+	<aura:attribute name="addressLine1" type="String" />
+	<aura:attribute name="addressLine2" type="String" />
+	<aura:attribute name="city" type="String" />
+	<aura:attribute name="state" type="String" />
+	<aura:attribute name="zipcode" type="String" />
+	<aura:attribute name="country" type="String" />
+	<aura:attribute name="contactLists" type="List" />
+	<!-- init handler which is invoked when lightning component is loaded, this will display contacts for the account record -->
+	<aura:handler name="init" value="{!this}" action="{!c.callInit}"></aura:handler>
+	<!-- below code is written to handle the size of the lightning popup window which is displayed in the UI -->
+	<aura:html tag="style"> .slds-modal__container{ max-width: 50rem !important; width:50% !important; height:auto; } </aura:html>
+	<div class="slds-align_absolute-center">
+		<!-- Display all information of account object -->
+		<lightning:card iconName="standard:account" title="Account">
+			<div class="slds-grid">
+				<lightning:recordEditForm objectApiName="Account" recordId="{!v.recordId}">
+					<div class="slds-box slds-box_small">
+						<lightning:layout>
+							<div class="slds-col slds-size_3-of-6">
+								<lightning:layoutItem>
+									<div class="slds-text-heading_medium">Existing address</div>
+									<br/>
+									<lightning:outputField readonly="true" fieldName="BillingStreet"></lightning:outputField>
+									<br/>
+									<lightning:outputField readonly="true" fieldName="BillingCity"></lightning:outputField>
+									<br/>
+									<lightning:outputField readonly="true" fieldName="BillingState"></lightning:outputField>
+									<br/>
+									<lightning:outputField readonly="true" fieldName="BillingPostalCode"></lightning:outputField>
+									<br/>
+									<lightning:outputField readonly="true" fieldName="BillingCountry"></lightning:outputField>
+									<br/> </lightning:layoutItem>
+							</div>
+							<lightning:layoutItem>
+								<!--<lightning:input type="checkbox" value="{!v.changeAddress}" onchange="{!c.checkChangedValue}" label="Want to change address?"></lightning:input>-->
+								<!--<aura:if isTrue="{!v.changeAddress}">-->
+								<!--<lightning:inputAddress addressLabel="New Address" streetLabel="Street" cityLabel="City" countryLabel="Country" provinceLabel="Province/State" postalCodeLabel="PostalCode" street="{!v.addressLine1}" city="{!v.city}" province="{!v.state}" country="{!v.country}" postalCode="{!v.zipcode}" required="true"> </lightning:inputAddress>-->
+								<!--</aura:if>-->
+								<div class="slds-text-heading_medium">New address</div>
+								<br/>
+								<lightning:input label="Billing Street" value="{!v.addressLine1}"></lightning:input>
+								<br/>
+								<lightning:input label="Billing City" value="{!v.city}"></lightning:input>
+								<br/>
+								<lightning:input label="Billing State" value="{!v.state}"></lightning:input>
+								<br/>
+								<lightning:input label="Billing PostalCode" value="{!v.zipcode}"></lightning:input>
+								<br/>
+								<lightning:input label="Billing Country" value="{!v.country}"></lightning:input>
+							</lightning:layoutItem>
+						</lightning:layout>
+					</div>
+					<br/>
+					<br/>
+					<!-- Display the related contact records for the account recordid -->
+					<lightning:card iconName="standard:contact" title="Contacts">
+						<div class="slds-box slds-box_small">
+							<table class="slds-table slds-table_cell-buffer slds-table_bordered">
+								<thead>
+									<tr>
+										<th> Contact FirstName </th>
+										<th> Contact LastName </th>
+										<th> Contact Email </th>
+										<th> Update Address? </th>
+									</tr>
+								</thead>
+								<tbody>
+									<aura:iteration items="{!v.contactLists}" var="contactRecord">
+										<tr>
+											<td> {!contactRecord.FirstName} </td>
+											<td> {!contactRecord.LastName} </td>
+											<td> {!contactRecord.Email} </td>
+											<td>
+												<input type="checkbox" id="{!contactRecord.Id}" onchange="{!c.handleCheckedValues}"></input>
+											</td>
+										</tr>
+									</aura:iteration>
+								</tbody>
+							</table>
+						</div>
+					</lightning:card>
+					<br/> </lightning:recordEditForm>
+			</div>
+		</lightning:card>
+	</div>
+	<br/>
+	<div class="slds-align_absolute-center">
+		<lightning:button variant="Brand" label="Submit" onclick="{!c.handleSubmitClick}"></lightning:button>
+		<lightning:button variant="Neutral" label="Cancel" onclick="{!c.handleCancel}"></lightning:button>
+	</div>
+</aura:component>

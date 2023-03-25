@@ -1,0 +1,7 @@
+<apex:page standardController="Account">
+hi ganesh
+ Account name is <b>{!account.name}</b><br/>
+ Billing City: {!account.BillingCity__c}
+ <apex:detail />
+ 
+</apex:page>

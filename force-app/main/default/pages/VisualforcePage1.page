@@ -1,0 +1,25 @@
+<apex:page standardController="Account">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+            Enter your name:<apex:inputText value="{!Account.Name}"/>
+       				  <apex:inputField value="{!Account.Name}"/>
+                <apex:inputCheckbox value="{!Account.Phone}"/>
+                <apex:inputTextarea value="{!Account.Industry}"/>
+                <apex:inputFile value=""></apex:inputFile>
+                
+              Value: <apex:outputText value="{!Account.Name}"></apex:outputText>
+                <apex:outputField value="{!Account.Name}"/>
+                <apex:outputLabel value="{!Account.Industry}">Industry label</apex:outputLabel>
+                
+            </apex:pageBlockSection>
+            
+        	
+        </apex:pageBlock>
+    
+            
+        	
+       
+    	
+    </apex:form>
+</apex:page>

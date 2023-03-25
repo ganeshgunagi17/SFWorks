@@ -1,0 +1,15 @@
+<apex:page standardController="Opportunity">
+<apex:form >
+<apex:pageBlock >
+    <apex:pageBlockSection >
+        <apex:outputText >Hello</apex:outputText>
+        <apex:inputField value="{!Opportunity.StageName}"/>
+        <apex:inputText value="{!Opportunity.StageName}"/>
+        <apex:commandLink value="Quick Save" action="{!QuickSave}"/>
+                <apex:commandButton value="Save" action="{!Save}"/>
+    </apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+
+
+</apex:page>

@@ -1,0 +1,8 @@
+<apex:page >
+
+<div class="slds-grid">
+  <div class="slds-col slds-size_4-of-6">Column 1</div>
+  <div class="slds-col">Column 2</div>
+  <div class="slds-col">Column 3</div>
+</div>
+</apex:page>

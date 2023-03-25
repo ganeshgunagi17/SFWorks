@@ -1,0 +1,12 @@
+<apex:page controller="MyNewAccount">
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!act}" var="ac">
+            <apex:column value="{!ac.Name}"/>
+            <apex:column value="{!ac.Industry}"/>
+            <apex:column value="{!ac.Phone}"/>
+            <apex:column value="{!ac.Name}"/>
+            <apex:column value="{!ac.Industry}"/>            
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+
+</apex:page>

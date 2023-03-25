@@ -1,0 +1,14 @@
+<aura:component controller="FetchingAccount">
+    <aura:attribute name="AccountList"  type="Account[]"/>
+    <aura:attribute name="accountname" type="String"/>
+    <lightning:input name="nameOf" value="{!v.accountname}" label="Enter the name.."></lightning:input>
+   
+    <lightning:button label="Fetch Accounts" onclick="{!c.getAccounts}"/>
+    <br/><br/>
+     <aura:iteration items="{!v.AccountList}" var="listAccn">
+    
+    	{!listAccn.Name} --
+        {!listAccn.Phone} --
+         {!listAccn.Id} 
+    </aura:iteration>
+</aura:component>

@@ -1,0 +1,7 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:handler name="init" value="{!this}" action="{!c.inInit}"/>
+    <aura:handler event="c:CheckDetail" action="{!c.checkme}"/>
+    <aura:method name="method2" action="{!c.domethod}">
+    	<aura:attribute name="param1" type="String"></aura:attribute>
+    </aura:method>
+</aura:component>

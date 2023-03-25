@@ -1,0 +1,31 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="recordsList" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+    <force:recordData aura:id="recordEditorId"
+                      targetFields="{!v.recordsList}"
+                      targetError="{!v.recordError}"
+                      targetRecord="{!v.record}"
+                      recordId="{!v.recordId}"
+                      fields="Name,BillingState,Rating"
+                      mode="EDIT"
+                      />
+    
+    <!--Record details-->
+    <lightning:card iconName="standard:account" title="{!v.recordsList.Name}">
+         <div class="slds-p-horizontal--small">
+            <p class="slds-text-heading--small">
+                <lightning:formattedText title="Billing State" value="{!v.recordsList.Name}" /></p>
+            <p class="slds-text-heading--small">
+                 <lightning:formattedText title="Billing City" value="{!v.recordsList.BillingState}" /></p>
+        </div>
+    </lightning:card>
+    <br/>
+    
+    <!--Edit Form-->
+    <lightning:card iconName="action:edit" title="{!v.recordsList.Name}">
+        <lightning:input label="Enter your name" value="{!v.recordsList.Name}"/>
+        <lightning:button label="Save Account" variant="brand" onclick="{!c.handleSaveRecord}"/>
+    </lightning:card>
+    
+</aura:component>

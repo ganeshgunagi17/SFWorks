@@ -1,0 +1,5 @@
+<aura:component >
+    <c:LightningEventComponent1/>
+	 <aura:handler name="sampleEvent" event="c:LightningEvent1" action="{!c.HandlerEventAction}"/>
+   
+</aura:component>

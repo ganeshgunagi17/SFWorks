@@ -1,0 +1,8 @@
+<aura:component >
+    <aura:attribute name="messageEvent" type="String"/>
+    
+    <aura:handler name="compregister" event="c:CustomEvent" action="{!c.handlerAction}"/>
+    <c:CustomEventComponent/>
+    {!v.messageEvent}
+    
+</aura:component>

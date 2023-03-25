@@ -1,0 +1,15 @@
+<apex:page >
+   <apex:form >
+    	<apex:pageBlock >
+       		<apex:pageBlockSection >
+            	
+                {!$User.FirstName}<br/><br/>
+                {!$User.LastName}<br/><br/>
+                {!$User.Email}<br/><br/>
+                {!$User.Phone}<br/><br/>
+                {!$User.Title}<br/>
+            </apex:pageBlockSection>
+            <apex:commandButton value="Send" action="{!save}"/>
+       </apex:pageBlock>
+    </apex:form>
+</apex:page>

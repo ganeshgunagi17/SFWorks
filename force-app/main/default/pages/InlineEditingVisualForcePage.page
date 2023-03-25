@@ -1,0 +1,41 @@
+<apex:page standardController="Account" recordSetVar="accountVar" renderAs="pdf">
+    
+    <style>
+        .ColorClass{font: bold 40px;}
+        </style>
+    
+    <apex:form >
+        
+        
+    	<apex:pageBlock >
+        	<apex:pageBlockTable value="{!accountVar}" var="acc">
+            	<apex:column >
+                	<apex:outputField value="{!acc.Name}" styleClass="ColorClass"/>
+                    <apex:facet name="header">Name</apex:facet>
+                
+                </apex:column> 
+                <apex:column >
+                	<apex:outputField value="{!acc.Type}"/>
+                	<apex:facet name="header"> Type</apex:facet>
+                </apex:column>
+                
+                <apex:column >
+                
+                	<apex:outputField value="{!acc.Rating}"/>
+                	<apex:facet name="header">Rating</apex:facet>
+                </apex:column>
+                
+                <apex:inlineEditSupport showOnEdit="saveButton,cancelButton" hideOnEdit="editButton" event="ondblClick"/>
+            
+            </apex:pageBlockTable>
+            
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Edit" action="{!edit}" id="editButton"/>
+                <apex:commandButton value="Save" action="{!save}" id="saveButton" />
+                <apex:commandButton value="Cancel" action="{!cancel}" id="cancelButton"/>
+            
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+               
+</apex:page>

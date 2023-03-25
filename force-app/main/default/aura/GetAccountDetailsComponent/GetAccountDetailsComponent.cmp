@@ -1,0 +1,18 @@
+<!--GetAccountDetailsComponent-->
+
+<aura:component controller="GetAccountDetailsApex" >
+    <aura:attribute type="String" name="AccountName" default="ABC"/>
+    <aura:attribute type="Object" name="fetchdetails"/>
+	<lightning:layout>
+    	<lightning:layoutItem>
+            <lightning:input type="text" label="Enter the account name:" required="True" value="{!v.AccountName}"/>
+            <lightning:button label="Fetch Account Details" onclick="{!c.GetAccount}"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem>
+        	<aura:iteration items="{!v.fetchdetails}" var="obj">
+                {!obj.Name}<br/>
+                {!obj.Id}
+            </aura:iteration> 
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

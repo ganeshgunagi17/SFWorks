@@ -1,0 +1,18 @@
+<apex:page controller="Wrapper_Class_AP">
+    <apex:form >
+            Enter a number: <apex:inputText value="{!inputText}"/><br/>
+            <apex:commandButton value="Submit" action="{!Submit}"/>
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!listWrap}" var="lp">
+                <apex:column headerValue="Select">
+                    <apex:inputCheckbox value="{!lp.Check}" id="checkedones">
+                        <apex:actionSupport event="onClick" action="{!getChecked}"/>
+                    </apex:inputCheckbox>
+                </apex:column>
+                <apex:column headerValue="Odd Number" value="{!lp.OddNum}"/>
+                <apex:column headerValue="Even Number" value="{!lp.EvenNum}"/>
+            </apex:pageBlockTable>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

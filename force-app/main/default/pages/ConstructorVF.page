@@ -1,0 +1,17 @@
+<apex:page controller="ConstructorPage">
+    <apex:form >
+    	<apex:pageBlock >
+        
+          Enter Value:  <apex:inputText value="{!searchString}"/><br/><br/>
+            
+            <apex:commandButton value="Go" action="{!SearchMe}" reRender="refresh"/><br/><br/>
+			<apex:pageBlockTable title="Details" value="{!listOpportunities}" var="oppVar" id="refresh">
+            	<apex:column value="{!oppVar.Name}"/>
+                <apex:column value="{!oppVar.Industry}"/>
+                <apex:column value="{!oppVar.Rating}"/>
+            </apex:pageBlockTable>
+        
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

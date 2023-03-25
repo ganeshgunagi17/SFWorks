@@ -1,0 +1,4 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" >
+	 <aura:registerEvent type="c:CompEventTest" name="testEvent"/>
+    <lightning:button label="test" onclick="{!c.initHandler}"/>
+</aura:component>

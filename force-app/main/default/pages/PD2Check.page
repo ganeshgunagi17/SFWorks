@@ -1,0 +1,11 @@
+<apex:page standardController="Account">
+    <apex:form >
+    	<apex:pageBlock >
+        	Name
+            <apex:pageBlockTable value="{!Account.contacts}" var="con" title="Account contacts">
+            	
+                <apex:commandLink value="{!con.Name}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

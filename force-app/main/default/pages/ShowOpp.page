@@ -1,0 +1,10 @@
+<apex:page controller="ShowOpp">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockTable value="{!showOppList}" var="sl">
+                <apex:column headerValue="Opportunity Name" value="{!sl.Name}"/>
+                <apex:column headerValue="Opportunity ID" value="{!sl.ID}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

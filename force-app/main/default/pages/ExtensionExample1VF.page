@@ -1,0 +1,15 @@
+<apex:page standardController="Account" extensions="ExtensionController1">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockSection >
+            
+                    <apex:repeat value="{!list}" var="lis">
+                    	<apex:outputText value="{!lis.name}"></apex:outputText>
+                    </apex:repeat>
+               
+            </apex:pageBlockSection>
+            
+            <apex:commandButton action="{!save}" value="save"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

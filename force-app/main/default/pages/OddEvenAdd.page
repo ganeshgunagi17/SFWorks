@@ -1,0 +1,14 @@
+<apex:page controller="OddEvenAdd">
+    
+    <apex:form >
+    	Enter a number: <apex:inputText value="{!inputNumber}"/>
+        <apex:commandButton value="Submit" action="{!submit}" rerender="a,b,c,d"/><br/><br/>
+        Odd Number:<apex:outputText value="{!oddVal}" id="a"></apex:outputText><br/><br/>
+        Even Number:<apex:outputText value="{!evenVal}" id="b"></apex:outputText><br/><br/>
+        
+        Odd Result:<apex:outputText value="{!oddAdd}" id="c"></apex:outputText><br/><br/>
+        Even Result:<apex:outputText value="{!evenAdd}" id="d"></apex:outputText>
+        
+        
+    </apex:form>
+</apex:page>

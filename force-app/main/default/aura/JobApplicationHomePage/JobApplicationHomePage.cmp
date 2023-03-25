@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,lightning:isUrlAddressable" access="global" >
+    <aura:attribute type="String" name="adminUserName"/>
+    <aura:attribute type="String" name="adminPassword"/>
+    <aura:attribute type="Boolean" name="showPassword" default="false"/>
+    <aura:registerEvent type="c:JobApplicationEvent" name="jobEvent"/>
+	<lightning:card title="Job Application"  iconName="standard:contact">
+    	<lightning:layout>
+        
+            <lightning:layoutItem size="4" padding="around-small">
+                <lightning:input label="Username" value="{!v.adminUserName}" type="text"/>
+                <lightning:input label="Password" type="{!v.showPassword?'text':'password'}"  value="{!v.adminPassword}"/><br/>
+                <lightning:button label="Submit" variant= "Brand" onclick="{!c.handleLogin}"/>
+                 <lightning:buttonIcon class="slds-button slds-input__icon slds-text-color--default" 
+                                  iconName="{!v.showpassword ? 'utility:hide':'utility:preview'}" 
+                                  alternativeText="{!v.coborrowerSSNCB ? 'Hide':'Show'}" onclick="{!c.togglePasswordVisibility}"></lightning:buttonIcon>
+            </lightning:layoutItem>
+          
+        </lightning:layout>
+    	
+    </lightning:card>
+</aura:component>

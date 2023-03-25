@@ -1,0 +1,28 @@
+<apex:page standardController="Account" recordSetVar="ListAccounts">
+<apex:form >
+     <apex:pageBlock title="My PageBlock">
+     <apex:pageBlockSection >
+                 <apex:inputField value="{!Account.Name}" label="Name"/>     
+                 
+     </apex:pageBlockSection>
+     
+         
+         <apex:pageBlockSection >
+         <apex:pageBlockTable value="{!ListAccounts}" var="lst">
+             <apex:column value="{!lst.Name}" title="Name"/>
+             <apex:column value="{!lst.Phone}" title="Phone"/>
+             <apex:column value="{!lst.Industry}" title="Industry"/>
+             <apex:inlineEditSupport />
+             </apex:pageBlockTable>
+             <apex:commandButton action="{!save}" id="saveButton" value="Save"/>
+         </apex:pageBlockSection>
+             
+         
+         
+     
+
+     
+     
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

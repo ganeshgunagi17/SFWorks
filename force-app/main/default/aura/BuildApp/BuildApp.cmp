@@ -1,0 +1,18 @@
+<aura:component controller="AppBuilder">
+    <aura:attribute name="acc" default="{'Name':'ABC',Industry='Agriculture'}" type="Account"/>
+    
+    <lightning:layout class="slds-page-header">
+    	<lightning:layoutItem padding="horizontal-small">
+        	<lightning:input aura:id="textme" name="name" label="Enter the name"
+                             value="{!v.acc.Name}"/>
+            
+            <lightning:input aura:id="textme" name="industry" label="Enter the industry details"
+                             value="{!v.acc.Industry}"/>
+            
+            <lightning:button label="Click Me!!" onclick="{!c.ClickCreate}"/>
+        </lightning:layoutItem>
+    
+    </lightning:layout>
+  
+	
+</aura:component>

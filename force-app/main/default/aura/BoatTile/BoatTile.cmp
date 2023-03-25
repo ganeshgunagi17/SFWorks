@@ -1,0 +1,13 @@
+<aura:component  controller="BoatSearchFormController"
+                implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="boat" type="Boat__c"/>
+   
+    <lightning:button class="{!v.selected ? 'tile selected' : 'tile'}" label="getimages" onclick="{!c.onBoatClick}">
+<div style="{! 'background-image:url(\'' + v.boat.Picture__c + '\');background-size: cover;height: inherit; '}" class="innertile">
+  <div class="lower-third">
+   <h1 class="slds-truncate">{!v.boat.Contact__r.Name}</h1>
+  </div>
+</div>
+</lightning:button>
+
+</aura:component>

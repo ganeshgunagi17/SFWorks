@@ -1,0 +1,31 @@
+<aura:component>
+    <aura:attribute type="String" name="textme" default="Hello,how are you?"/>
+    <lightning:layout class="slds-page-header--horizontal">
+    	
+       
+    	
+        <lightning:layoutItem>
+            <lightning:icon iconName="action:goal" alternativeText="My Camping"/>
+            <div class="page-section page header">
+            	<h6 class="slds-text-heading--label">My Form</h6>
+            </div>
+        	<fieldset class="slds-box slds-theme--default slds-container--large">
+            	<form class="slds-form--stacked">
+                	<lightning:input type="text" name="name" aura:id="recordid" label="Enter the name"
+                                     required="true" value="{!v.textme}"/>
+                    
+                    <lightning:input type="date" aura:id="recordid" label="Enter the date"/>
+                    
+                    <lightning:input type="Integer" aura:id="recordid" label="Enter the quantity"/>
+                    
+                    <lightning:input type="text" aura:id="recordid" label="Enter the email"/>
+                    
+                    <lightning:input type="phone" aura:id="recordid" label="Enter the phone details"/>
+                                                                            
+                    <lightning:button label="Submit" onclick="{!c.ClickCheck}"/>                                                                                                        
+                                  
+                </form>
+            </fieldset>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

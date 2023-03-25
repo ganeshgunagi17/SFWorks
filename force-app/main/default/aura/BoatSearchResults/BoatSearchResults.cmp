@@ -1,0 +1,37 @@
+<aura:component controller="BoatSearchResults" implements="force:appHostable,flexipage:availableForAllPageTypes" access="global">
+    <!-- Tharun challenge 3 -->
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:attribute name="boats" type="Boat__c[]" />
+    <!-- Tharun challenge 3 -->
+    
+    <!-- Tharun challenge 4 -->
+    <aura:attribute name="boatTypeId" type="String" />
+    <aura:method name="search" access="global" action="{!c.doSearch}" >
+        <aura:attribute name="boatTypeId" type="String" />
+    </aura:method>
+    
+    
+    <!-- challenge 5-->
+    <aura:attribute name="selectedBoatId" type="String" />
+    <aura:handler name="BoatSelect" event="c:BoatSelect" action="{!c.onBoatSelect }"/>
+    
+    
+    
+    <lightning:layout multipleRows="true" horizontalAlign="center">
+        
+        <aura:iteration items="{!v.boats}" var="boat">
+            <lightning:layoutItem size="4" flexibility="grow" class="slds-m-right_small" >  
+                <c:BoatTile boat="{!boat}" />
+            </lightning:layoutItem>
+        </aura:iteration>
+        
+        
+        <aura:if isTrue="{!v.boats.length==0}">
+            <lightning:layoutItem class="slds-align_absolute-center" flexibility="auto" padding="around-small">   
+                <ui:outputText value="No boats found" />
+            </lightning:layoutItem>
+        </aura:if>
+        
+    </lightning:layout>
+    
+</aura:component>

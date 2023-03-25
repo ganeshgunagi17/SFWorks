@@ -1,0 +1,15 @@
+<apex:page controller="ListDisplay">
+    <apex:form >
+    <apex:pageBlock >
+        Enter the number: <apex:inputText value="{!enterNumber}"/><br/><br/>
+        
+        
+        <apex:commandButton value="Submit" action="{!Submit}"/><br/><br/>
+        
+        List is:<apex:outputText value="{!listNumber}"></apex:outputText>
+        
+        </apex:pageBlock>
+    
+    </apex:form>
+    
+</apex:page>

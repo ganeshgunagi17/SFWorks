@@ -1,0 +1,9 @@
+<apex:page controller="DisplayNameList">
+    <apex:form >
+    	<apex:pageBlock title="Name list">
+        	<apex:inputText value="{!fetchName}"/>
+        </apex:pageBlock>
+        Result:<apex:outputText >{!fetchName}</apex:outputText>
+        <apex:commandButton action="{!fetchDetails}" value="Get Name"/>
+    </apex:form>
+</apex:page>

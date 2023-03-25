@@ -1,0 +1,20 @@
+<apex:page sidebar="false">
+  <h1>Hello I am </h1> {! $User.FirstName&' '& $User.LastName}
+  <p>This page is for the demo and practicing visualforce
+  I will catch this and learn this at a very good pace</p>
+  Today's Date: {!Today()}<br/>
+  Year:{!Year(Today())}<br/>
+  Month:{!month(Today())}<br/>
+  Date:{!Day(Today())}
+  After 5 day from today i.e. on <b>{!Today()+5}</b> I am good.<br/>
+  
+  <h1>Today's date is (mm/dd/yyyy):</h1> {!month(Today())}/{!day(Today())}/{!year(Today())} <br/>
+  
+  Maximum number: {!Max(2,4,5,6)} <br/>
+   Maximum number: {!Min(2,4,5,6)} <br/>
+   Square root of 49: {!Sqrt(49)} <br/><br/>
+  
+  {!if(contains('ganeshgunagi','gunagi'),'Yes gunagi','No Gunagi')}
+  
+  
+</apex:page>

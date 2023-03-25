@@ -1,0 +1,27 @@
+<aura:component >
+    <aura:attribute name="timecard" type="Timesheet__c" default="{'NAme':'ABC','Approver_Name__c':'Saina','sObjectType':'Timesheet__c'}"/>
+   
+    <lightning:layout class="slds-page-header">
+        
+        <lightning:layoutItem padding="horizontal-small">
+            <div class="page-section page-header">
+                <h1 class="slds-text-heading--label">Timesheet</h1>
+                <h2 class="slds-text-heading--medium">My Timesheet</h2>
+            </div>
+        </lightning:layoutItem>
+    
+    <lightning:layoutItem>
+    <form class="slds-form--stacked">
+    	<lightning:input aura:id="timeent" label="Timesheet Name"
+                             name="timename"
+                             value="{!v.timecard.NAme}"
+                             required="true"/> 
+        
+        <lightning:combobox aura:id="timeent" label="Approver name"
+                            name="checkname" options="{!v.timecard.Approver_Name__c}"/>
+    </form>
+        <lightning:button label="Submit" name="submitt" onclick="{!c.Clickme}"/>
+    </lightning:layoutItem>
+       
+        </lightning:layout>
+</aura:component>

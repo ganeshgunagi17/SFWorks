@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Search User" icon-name="standard:contact">
+        <lightning-layout>
+            <lightning-layout-item>
+                <lightning-input type="text"  onchange={handleInputChange}></lightning-input>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+    <div if:true={users}>
+    <template for:each={users.items} for:item="profVar">
+       <span key={profVar.Id}>
+        <p>{profVar.login}</p>
+        <p><img src={profVar.avatar_url}/></p>
+        </span> 
+   
+
+
+    </template> </div>
+
+
+</template>

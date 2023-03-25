@@ -1,0 +1,22 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute type="Object" name="loadData"/>
+    <aura:attribute type= "String" name="errorData"/>
+    <aura:attribute type="Object" name="fields"/>
+    <aura:attribute type="String" name="studentFullName"/>
+    
+    <force:recordData aura:id="studentRecordData"
+                      targetFields="{!v.fields}"
+                      targetRecord="{!v.loadData}"
+                      targetError="{!v.errorData}"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      recordUpdated="{!c.updatedRecord}"
+                      mode="EDIT"/>
+    
+    <lightning:card iconName = "standard:user" title="{! ' Student Details of '+v.studentFullName}">
+        
+        <c:StudentEntireDetails recordId="{!v.recordId}"/>
+    </lightning:card>
+                                                     
+    
+</aura:component>

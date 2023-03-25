@@ -1,0 +1,27 @@
+<apex:page standardController="Account" recordSetVar="AccountsVar">
+    <apex:form >
+        <style>
+        	.A1{background-color: blue; color: yellow;}
+        </style>
+    	<apex:pageBlock >
+        	<apex:tabPanel switchType="Ajax" activeTabClass="A1" tabClass="activeTab">
+            	<apex:tab label="Accounts">
+                	<apex:pageBlockTable value="{!AccountsVar}" var="acc" >
+                        <apex:inlineEditSupport />
+                Name:	<apex:column value="{!acc.Name}"/>
+                    Type:	<apex:column value="{!acc.Type}"/>
+                    Industry:	<apex:column value="{!acc.Industry}"/>
+                    <!--	Rating: <apex:column value="{!acc.Rating}"/> -->
+                </apex:pageBlockTable>
+                </apex:tab>
+                
+                <apex:tab label="Default">
+                	
+				{!$User.FirstName}        
+                </apex:tab>
+            </apex:tabPanel>
+            	
+        </apex:pageBlock>
+    </apex:form>
+              
+</apex:page>

@@ -1,0 +1,15 @@
+<apex:page standardController="Opportunity" extensions="oppExt">
+    
+    <apex:pageBlock title="Opportunity Lists">
+    	<apex:detail relatedList="true"/>
+       
+    </apex:pageBlock>
+   <apex:pageBlock >
+     <apex:pageBlockTable value="{!acc}" var="accountvar">
+        	<apex:column value="{!accountvar.name}"/>
+            	<apex:column value="{!accountvar.type}"/>
+            	<apex:column value="{!accountvar.industry}"/>
+            	<apex:column value="{!accountvar.name}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

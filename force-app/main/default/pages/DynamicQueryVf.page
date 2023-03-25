@@ -1,0 +1,14 @@
+<apex:page controller="DynamicApexClass">
+    <apex:form >
+        <apex:pageBlock >
+        <apex:inputText value="{!inputnumber}"/>
+        <apex:commandButton action="{!Submit}" value="Submit" rerender="id1"/>
+        <apex:pageBlockTable title="List of Accounts" value="{!listOfAccounts}" var="lacc" id="id1">
+                                <apex:repeat value="{!$objectType.Account.FieldSets.MyFieldSet}" var="acc">
+                        <apex:column value="{!lacc[acc]}"/>
+            </apex:repeat>            
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

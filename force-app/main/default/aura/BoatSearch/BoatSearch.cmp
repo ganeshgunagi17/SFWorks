@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global">
+    
+    <aura:handler event="c:FormSubmit" action="{!c.onFormSubmit}" />
+    
+    <Lightning:card title = "Find a Boat" class="slds-m-bottom_10px">
+        <c:BoatSearchForm/>
+    </Lightning:card>
+    
+    <Lightning:card title = "Matching Boats">
+        <c:BoatSearchResults aura:id = 'childCmp' />
+    </Lightning:card>
+	
+</aura:component>

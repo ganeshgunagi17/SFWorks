@@ -1,0 +1,10 @@
+<apex:page controller="BattleStationBatchApexClass">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockSection title="Inputs">
+            	<apex:inputText value="{!name}" label="Enter your name.."/>
+            </apex:pageBlockSection>
+            <apex:commandButton action="{!invokeBatch}" value="click me!!" title="asfdadsf"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

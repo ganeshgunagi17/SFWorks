@@ -1,0 +1,8 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:registerEvent name="testEvent" type="c:CheckDetail"/>
+    <aura:handler value="{!this}" name="init" action="{!c.doInit}"/>
+    <lightning:navigation aura:id="nav"/>
+  <!--  <c:CheckDetailComp2 aura:id="childComp"/>-->
+    
+    
+</aura:component>

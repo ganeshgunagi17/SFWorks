@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute type="Object" name="record"/>
+    <aura:attribute type="Object" name="recordFields"/>
+    <aura:attribute type="String" name="recordError"/>
+    <force:recordData aura:id="recorddata" targetFields="{!v.recordFields}" targetError="{!v.recordError}"
+                      fields="Name,BillingCity,Industry" recordId="{!v.recordId}" mode="Edit">
+    
+    </force:recordData>
+    <aura:handler action="{!c.doInit}" name="init" value="{!this}"/>
+</aura:component>

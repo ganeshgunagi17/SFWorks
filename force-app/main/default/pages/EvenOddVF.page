@@ -1,0 +1,14 @@
+<apex:page controller="EvenOdd">
+
+ <apex:form >
+    <apex:pageBlock title="Odd or Even">
+
+     Enter the number to validate: <apex:inputText value="{!checkNumber}"/><br/><br/>
+     
+     <apex:commandButton value="Go!!" action="{!CheckOddEven}" reRender="refresh"/><br/><br/>
+     
+     <apex:outputText value="{!status}" id="refresh"></apex:outputText><br/>
+    
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

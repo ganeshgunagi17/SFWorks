@@ -1,0 +1,13 @@
+<apex:page standardController="Account" recordSetVar="recordvalues" extensions="ext1">
+    <apex:pageBlock >
+    	<apex:pageBlockSection title="{!sizeval}">
+        	<apex:pageBlockTable value="{!recordvalues}" var="rc">
+              
+					<apex:column value="{!rc.Name}"/>
+               		 <apex:column value="{!rc.Phone}"/>                
+              
+            	
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

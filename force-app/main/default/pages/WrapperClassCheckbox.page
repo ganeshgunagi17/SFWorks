@@ -1,0 +1,31 @@
+<apex:page controller="WrapperClassCheck">
+    <apex:form >
+    Enter a number:<apex:inputText value="{!enterNumber}"/>
+        <apex:pageBlock >
+        	<apex:pageBlockSection >
+            	<apex:pageBlockTable value="{!oddEvenList}" var="oel">
+                	<apex:column headerValue="Select">
+                        <apex:inputCheckbox value="{!oel.checkBox}" />
+                    </apex:column>
+                    
+                	<apex:column headerValue="Odd Numbers">
+                        <apex:inputText value="{!oel.oddnumber}" />
+                    </apex:column>
+                    
+                	<apex:column headerValue="Even">
+                        <apex:inputText value="{!oel.evenNumber}" />
+                    </apex:column>
+  				
+                    
+                    <!--<apex:commandButton value="Calculate" action="{!calculate}"/> -->
+                </apex:pageBlockTable>
+              
+                          </apex:pageBlockSection>
+              <apex:commandButton value="Submit" action="{!submit}"/>
+
+        </apex:pageBlock>
+        <apex:pageBlock >
+        sadkjsdk
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,56 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" controller="StudentEntireDetailsApex" access="global" >
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="showModal" type="boolean" default="false"/>
+    <aura:attribute name="additionaldataEntered" type="boolean" default="false"/>
+    <aura:attribute name="targetFieldsData" type="Object"/>
+    <aura:attribute name="recordData" type="Object"/>
+   <aura:if isTrue="{!v.recordId}">
+       <lightning:recordViewForm recordId= "{!v.recordId}" objectApiName="College__c">
+       
+       		<lightning:outputField fieldName="Full_Name__c">
+           </lightning:outputField>
+           <lightning:outputField fieldName="Stream__c"></lightning:outputField>
+           <aura:if isTrue="{!v.additionaldataEntered}">
+           	<lightning:outputField fieldName="Mobile__c"></lightning:outputField>
+               
+           </aura:if>
+           
+           
+           
+           
+       </lightning:recordViewForm>
+       <lightning:button label="Enter more details" variant="Brand" onclick="{!c.handleClick}" />
+    </aura:if>
+    
+    <aura:if isTrue="{!v.showModal}">
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+    	<div class="slds-modal__container">
+        	<header class="slds-modal__header">
+            	Enter additional details here:
+            </header>
+            
+            <div class="slds-modal__content slds-p-around_medium">
+            	<force:recordData aura:id="recordDataId"
+                                  recordId= "{!v.recordId}"
+                                  targetFields = "{!v.targetFieldsData}"
+                                  targetRecord="{!v.recordData}"
+                                  layoutType="FULL"
+                                  mode="EDIT"
+                                  ></force:recordData>
+                
+                <lightning:input type="text" label="Enter your phone" value="{!v.targetFieldsData.Mobile__c}"></lightning:input>
+                <lightning:select  label="Select Gender">
+                	<aura:iteration items="{!v.targetFieldsData.Gender__c}" var="gen">
+                    	<option value="{!gen}">{!gen}</option>
+                    </aura:iteration>
+                </lightning:select>
+            </div>
+             <footer class="slds-modal__footer">
+     			 <button class="slds-button slds-button_neutral" onclick="{!c.closeModal}">Cancel</button>
+      			<button class="slds-button slds-button_brand" onclick="{!c.handleSave}">Save</button>
+    </footer>
+        </div>
+    </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,14 @@
+<apex:page Controller="GroceryInsert" sidebar="false">
+    <apex:form >
+    	<apex:pageBlock title="Grocery Details">
+            <apex:pageBlockSection >
+                Enter the customer name: <apex:inputText value="{!customerName}"/>
+                Enter the customer phone: <apex:inputText value="{!customerPhone}"/>
+                Enter the customer name to delete: <apex:inputText value="{!deleteCustomer}"/>
+                <apex:commandButton value="Click Me..." action="{!PerformData}" reRender="idd"/>
+   				<apex:outputText value="{!customerName}" id="idd"></apex:outputText>
+            </apex:pageBlockSection>        
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

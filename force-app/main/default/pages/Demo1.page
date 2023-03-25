@@ -1,0 +1,15 @@
+<apex:page standardController="Account">
+    
+    <apex:pageBlock title="AccountSummary">
+    	<apex:pageBlockSection >
+            Name:{!Account.name}<br/>
+            Industry: {!Account.Industry}
+            
+        </apex:pageBlockSection>
+        <apex:pageBlockSection >
+            Name:{!Account.name}<br/>
+            Industry: {!Account.Industry}
+            
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

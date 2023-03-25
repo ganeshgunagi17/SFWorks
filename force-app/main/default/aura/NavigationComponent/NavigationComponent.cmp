@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute type="Boolean" name="checkCondition"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:navigation aura:id="navId"/>
+    <lightning:notificationsLibrary aura:id="notifyId"/>
+    <aura:if isTrue="{!v.checkCondition}">
+        <lightning:button label="Click Here!!" onclick="{!c.navigateTo}"/>
+    
+    </aura:if>
+</aura:component>

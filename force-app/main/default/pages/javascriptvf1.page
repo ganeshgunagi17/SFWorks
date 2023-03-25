@@ -1,0 +1,17 @@
+<apex:page >
+    <apex:form >
+    	<script>
+    function changeName(input,textid){
+    document.getElementById(textid).style.color="blue";
+    
+    }
+    </script>
+    
+    <apex:inputText id="name" onmouseover="changeName(this,'{!$Component.enter}');"/>
+    
+    <apex:outputText id="enter">
+    cahnadjlfjl
+    </apex:outputText>
+    </apex:form>
+    
+</apex:page>

@@ -1,0 +1,5 @@
+<aura:component >
+    <aura:registerEvent name="sampleEvent" type="c:LightningEvent1"/>
+   
+    <lightning:button label="Click here to display event message" onclick="{!c.Display}"/>
+</aura:component>

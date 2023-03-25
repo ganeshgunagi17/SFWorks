@@ -1,0 +1,32 @@
+<apex:page standardController="Account">
+    
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockSection columns="3">
+            	<apex:dataTable value="{!account.Contacts}" var="accOn" border="1" bgcolor="beige">
+                    
+                    <apex:column value="{!accOn.FirstName}"/>
+                    
+                    <apex:column value="{!accOn.LastName}"/>
+                    
+                    <apex:column >
+                    	<apex:actionSupport reRender="detailedview" event="onmouseover">
+                        	<apex:param value="{!accOn.id}" name="pid"/>
+                            
+                            {!accOn.Phone}
+                        </apex:actionSupport>
+                        
+                    </apex:column>
+                    
+                	
+                </apex:dataTable>
+                	
+            
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    <apex:outputPanel id="detailedview">
+    	<apex:detail relatedList="false" subject="{!$CurrentPage.parameters.pid}"/>
+    
+    </apex:outputPanel>
+</apex:page>

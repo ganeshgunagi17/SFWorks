@@ -1,0 +1,10 @@
+<apex:page controller="MultiClass">
+    <apex:form >
+    	<apex:pageBlock title="Multiplication">
+        	<apex:inputText value="{!integervalue}"/>
+            
+        </apex:pageBlock>
+        <apex:outputText >{!integerlist}</apex:outputText>
+        <apex:commandButton value="Submit" action="{!multiplicationvals}"/>
+    </apex:form>
+</apex:page>

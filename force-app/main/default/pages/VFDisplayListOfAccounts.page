@@ -1,0 +1,14 @@
+<apex:page standardController="Account" recordSetVar="accountList">
+    <apex:form >
+    	<apex:pageBlock title="List of Account" tabStyle="Contact">
+        	<apex:pageBlockTable value="{!accountList}" var="acc" >
+            	<apex:column value="{!acc.Name}"/>
+                <apex:column value="{!acc.Industry}"/>
+                <apex:column value="{!acc.Phone}"/>
+            </apex:pageBlockTable>
+            <apex:inlineEditSupport />
+           
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

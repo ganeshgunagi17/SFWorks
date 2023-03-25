@@ -1,0 +1,15 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute name="fieldss" type="List" default="['Name','Phone']"></aura:attribute>
+	<lightning:recordForm 
+                          aura:id="recordFormId"
+                          objectApiName="Account"
+                         
+                          fields="{!v.fieldss}"
+                          mode="edit"
+                          onsuccess="{!c.submithandler}"
+                          >
+        <br/><br/>
+
+    	
+    </lightning:recordForm>
+</aura:component>

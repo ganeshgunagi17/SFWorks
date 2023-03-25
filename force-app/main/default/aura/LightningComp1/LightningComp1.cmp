@@ -1,0 +1,39 @@
+<aura:component controller="fetchAppContacts" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <!--<aura:handler name="init" action="{!c.callInit}" value="{!this}"/>-->
+    <aura:attribute type="String" name="name" default="ganesh"></aura:attribute>
+    <aura:attribute type="String" name="accountnumber"/>
+    <aura:attribute type="Boolean" name="accountnumcheck"/>
+    <aura:attribute type="List" name="contactList"/>
+    <aura:attribute type="Boolean" name="blankvalue"/>
+    <aura:attribute type="String" name="severity"></aura:attribute>
+    <aura:attribute type="String" name="msgtitle"/>
+        <aura:attribute type="String" name="message"/>
+    <div class="slds-box">
+    	<div class ="slds-grid">
+            <lightning:input type="String" value="{!v.accountnumber}" aura:id="accountnum" label="Enter the account number" onblur="{!c.checkAccount}"/>
+            
+        </div>            
+        <br/><br/>
+        <aura:if isTrue="{!v.blankvalue}">
+        	<ui:message severity="{!v.severity}" closable="true" title="{!v.msgtitle}">
+            	{!v.message}
+            </ui:message>
+        </aura:if>
+    <div class="slds-grid">
+    	<aura:if isTrue="{!v.accountnumcheck}">
+            	<aura:iteration items="{!v.contactList}" var="cont">
+                	<lightning:recordViewForm recordId="{!cont.Id}" objectApiName="Contact">
+                    	<div class="slds-box">
+                        	<lightning:outputField fieldName="FirstName">
+                            </lightning:outputField>
+                            <lightning:outputField fieldName="LastName"/>
+                            <lightning:outputField fieldName="Id"/>
+                        </div>
+                    </lightning:recordViewForm>
+                </aura:iteration>
+            </aura:if>
+    </div>
+  
+    </div>
+    
+</aura:component>

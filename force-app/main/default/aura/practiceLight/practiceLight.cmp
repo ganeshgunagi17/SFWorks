@@ -1,0 +1,4 @@
+<aura:component >
+    <aura:attribute name="msg" type="String" default="Ganesh gunagi"/>
+    <p>Hello ! {!v.msg}</p>
+</aura:component>
