@@ -1,0 +1,26 @@
+.This .overweightColor{
+    color:red;
+}
+
+.This .underweightColor{
+    color:red;
+}
+
+.This.normalColor{
+    color:red;
+}
+
+.This .obeseColor{
+    color: red;
+}
+
+.spins{
+    content: 'Loading';
+    color: red;
+    
+}
+
+h1{
+    
+    color:red;
+}
